@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "DI-Causal-Type-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/Causal-Type.json",
     "title": "Causal Type",
     "description": "The causal type of the decision element.",
     "$comment": "Ensures causal type names are consistent wherever used.",

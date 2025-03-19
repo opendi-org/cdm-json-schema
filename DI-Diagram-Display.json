@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-DiaDisplay-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Diagram-Display.json",
     "title": "DI Diagram Display",
     "description": "(DRAFT) -- Library of display components for use in a Causal Decision Diagram, for OpenDI-compliant software.",
     "oneOf": [

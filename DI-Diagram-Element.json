@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-DiaElem-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Diagram-Element.json",
     "title": "DI Diagram Element",
     "description": "(DRAFT) -- Represents an element of a diagram (CDD) in a CDM, for OpenDI-compliant software. May have Display objects attached.",
     "type": "object",

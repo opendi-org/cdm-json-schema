@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-Control-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Control.json",
     "title": "DI Control",
     "description": "(DRAFT) -- Represents a Controllable element of a DI Diagram. Controls create interactive Diagram elements by connecting the display portion of the element to Evaluatable element(s) and Input/Output Value(s).",
     "properties": {
