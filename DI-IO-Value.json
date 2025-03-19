@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-IOValue-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-IO-Value.json",
     "title": "DI Input/Output Value",
     "description": "(DRAFT) -- Represents an I/O value used by Runnable Models in this CDM, for OpenDI-compliant software. I/O Values can be read or set by Runnable Models, and interactively in Diagrams, via Controls. A single I/O Value can be referenced in multiple Runnable Models and Controls.",
     "properties": {

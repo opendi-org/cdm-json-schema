@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-EvalAssets-v0.9-alpha-0225",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Evaluatable-Assets.json",
     "title": "DI Evaluatable Assets",
     "description": "Defines the library of acceptable Evaluatable Assets to be used in Causal Decision Models.",
     "$defs": {

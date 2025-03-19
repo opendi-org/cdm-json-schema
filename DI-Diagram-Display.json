@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-DiaDisplay-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Diagram-Display.json",
     "title": "DI Diagram Display",
     "description": "(DRAFT) -- Library of display components for use in a Causal Decision Diagram, for OpenDI-compliant software.",
     "oneOf": [
@@ -202,8 +202,13 @@
                         },
                         "text": { "type": "string", "default": "" },
                         "font": {
-                            "MIMEType": {"type": "string", "default": "font/otf"},
-                            "base64String": {"type": "string"}
+                            "type": "object",
+                            "properties": {
+                                "MIMEType": {"type": "string", "default": "font/otf"},
+                                "base64String": {"type": "string"}
+                            },
+                            "required": ["MIMEType", "base64String"],
+                            "additionalProperties": false
                         }
                     },
                     "required": ["text"],

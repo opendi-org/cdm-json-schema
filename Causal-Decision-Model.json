@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-CDM-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/Causal-Decision-Model.json",
     "title": "Causal Decision Model",
     "description": "(DRAFT) -- Represents a Causal Decision Model for OpenDI-compliant software.",
     "properties": {

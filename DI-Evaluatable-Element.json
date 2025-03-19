@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ODI-EvalElem-v0.0-alpha-0325",
+    "$id": "https://opendi.org/json-schema/v0-draft-0325/DI-Evaluatable-Element.json",
     "title": "DI Evaluatable Element",
     "description": "(DRAFT) -- Represents an evaluatable component of a Runnable Model in a CDM, for OpenDI-compliant software. Used for simulation/computation.",
     "type": "object",
