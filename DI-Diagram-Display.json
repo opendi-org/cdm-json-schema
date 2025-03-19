@@ -202,8 +202,13 @@
                         },
                         "text": { "type": "string", "default": "" },
                         "font": {
-                            "MIMEType": {"type": "string", "default": "font/otf"},
-                            "base64String": {"type": "string"}
+                            "type": "object",
+                            "properties": {
+                                "MIMEType": {"type": "string", "default": "font/otf"},
+                                "base64String": {"type": "string"}
+                            },
+                            "required": ["MIMEType", "base64String"],
+                            "additionalProperties": false
                         }
                     },
                     "required": ["text"],
