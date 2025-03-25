@@ -1,9 +1,9 @@
 {
-    "$schema": "./Causal-Decision-Model.json",
+    "$schema": "../schema-source/Causal-Decision-Model.json",
     "meta": {
         "uuid": "db1ae176-6734-4883-aa6e-96f9579d2f59",
         "name": "Test CDD - Word Combination",
-        "summary": "CDD for testing controls: Text input and Boolean input",
+        "summary": "CDD for testing controls: Text input and Boolean input. This example uses two types of input, and a string-modification script with multiple inputs. The CDD combines and (optionally) shuffles words to create Intermediates, which are then combined and (optionally) shuffled again to produce an Outcome.",
         "documentation": {
             "content": "",
             "MIMEType": "text/plain"
