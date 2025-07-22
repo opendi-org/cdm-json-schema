@@ -25,6 +25,8 @@
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -98,6 +100,8 @@
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -144,6 +148,8 @@
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -179,10 +185,12 @@
                 },
                 "content": {
                     "title": "Text Contents",
-                    "description": "Holds properties specific to a Text Element",
+                    "description": "Holds properties specific to a Text Display",
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -219,7 +227,7 @@
             "additionalProperties": false
         },
         {
-            "title": "Custom Element",
+            "title": "Custom Display",
             "description": "Holds data for a custom graphical element in a CDD. Data stored in this type of element is not standardized.",
             "type": "object",
             "properties": {
@@ -235,8 +243,8 @@
                     "pattern": "^CUSTOM_.*"
                 },
                 "content": {
-                    "title": "Custom Diagram Element Contents",
-                    "description": "Holds properties for this custom diagram element. Data stored here is not standardized."
+                    "title": "Custom Display Contents",
+                    "description": "Holds properties for this custom Display. Data stored here is not standardized."
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -259,10 +267,12 @@
                 },
                 "content": {
                     "title": "Range Control Contents",
-                    "description": "Holds properties specific to a Range Control Element",
+                    "description": "Holds properties specific to a Controllable Range Display",
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -308,10 +318,12 @@
                 },
                 "content": {
                     "title": "Text Control Contents",
-                    "description": "Holds properties specific to a Text Control Element",
+                    "description": "Holds properties specific to a Controllable Text Display",
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -354,10 +366,12 @@
                 },
                 "content": {
                     "title": "Boolean Control Contents",
-                    "description": "Holds properties specific to a Boolean Control Element",
+                    "description": "Holds properties specific to a Controllable Boolean Display",
                     "type": "object",
                     "properties": {
                         "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
                             "type": "object",
                             "properties": {
                                 "x": {"type": "number", "default": 0},
@@ -377,6 +391,78 @@
                         }
                     },
                     "required": ["controlParameters"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["meta", "displayType", "content"],
+            "additionalProperties": false
+        },
+        {
+            "title": "Stacked Bar Chart",
+            "description": "Holds data and configuration for a dynamic bar chart",
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "title": "Asset Metadata",
+                    "description": "Metadata shared by all DI Assets",
+                    "$ref": "./DI-Asset.json"
+                },
+                "displayType": {
+                    "title": "Display Type",
+                    "description": "The type of display object. Determines what other properties the schema expects.",
+                    "const": "stackedBarChart"
+                },
+                "content": {
+                    "title": "Bar Chart Control Contents",
+                    "description": "Holds properties specific to a Stacked Bar Chart Display",
+                    "type": "object",
+                    "properties": {
+                        "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
+                            "type": "object",
+                            "properties": {
+                                "x": {"type": "number", "default": 0},
+                                "y": {"type": "number", "default": 0}
+                            },
+                            "required": ["x", "y"],
+                            "additionalProperties": false
+                        },
+                        "data": {
+                            "type": "object",
+                            "description": "Data for the stacked bar chart, given as a list of labels for each bin on the x axis, and a list of data series.",
+                            "properties": {
+                                "xAxisLabels": {
+                                    "type": "array",
+                                    "items": {"type": "string"}
+                                },
+                                "series": {
+                                    "title": "Data Series",
+                                    "description": "List of data series for the chart. Each series has a list of values comprising one 'layer' of each bar on the chart, along with a title and color for that 'layer'. The length of values[] MUST match the length of xAxisLabels[].",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "title": {"type": "string"},
+                                            "values": {
+                                                "type": "array",
+                                                "items": {"type": "number"}
+                                            },
+                                            "color": {"type": "string"}
+                                        },
+                                        "required": ["title", "values"],
+                                        "additionalProperties": false
+                                    }
+                                }
+                            },
+                            "required": ["xAxisLabels"],
+                            "additionalProperties": false
+                        },
+                        "minY": {"type": "number"},
+                        "maxY": {"type": "number"},
+                        "stepHeight": {"type": "number"}
+                    },
+                    "required": ["data", "minY", "maxY"],
                     "additionalProperties": false
                 }
             },
