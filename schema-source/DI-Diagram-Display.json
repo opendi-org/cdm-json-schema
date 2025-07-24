@@ -398,6 +398,55 @@
             "additionalProperties": false
         },
         {
+            "title": "Control: Selector",
+            "description": "Holds properties specific to a Controllable Selector Display",
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "title": "Asset Metadata",
+                    "description": "Metadata shared by all DI Assets",
+                    "$ref": "./DI-Asset.json"
+                },
+                "displayType": {
+                    "title": "Display Type",
+                    "description": "The type of display object. Determines what other properties the schema expects.",
+                    "const": "controlSelector"
+                },
+                "content": {
+                    "title": "Selector Control Contents",
+                    "description": "Holds properties specific to a Controllable Selector Display",
+                    "type": "object",
+                    "properties": {
+                        "relativePosition": {
+                            "title": "Relative Position",
+                            "description": "For environments that treat Diagram Elements as groups of arbitrarily-positioned Displays, this holds the offset position of this display, relative to the Diagram Element",
+                            "type": "object",
+                            "properties": {
+                                "x": {"type": "number", "default": 0},
+                                "y": {"type": "number", "default": 0}
+                            },
+                            "required": ["x", "y"],
+                            "additionalProperties": false
+                        },
+                        "controlParameters": {
+                            "type": "object",
+                            "properties": {
+                                "options": {"type": "array", "items": true, "minItems": 1},
+                                "selectedValue": {"default": 0},
+                                "isInteractive": {"type": "boolean", "default": true}
+                            },
+                            "required": ["options", "selectedValue", "isInteractive"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": ["controlParameters"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["meta", "displayType", "content"],
+            "additionalProperties": false
+        },
+        {
             "title": "Stacked Bar Chart",
             "description": "Holds data and configuration for a dynamic bar chart",
             "type": "object",
