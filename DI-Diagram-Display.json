@@ -37,6 +37,11 @@
                         }
                     },
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -74,6 +79,11 @@
                     },
                     "required": ["vertices"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -122,6 +132,11 @@
                     },
                     "required": ["boundingBoxSize"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -163,6 +178,11 @@
                     },
                     "required": ["xRadius", "yRadius"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -221,6 +241,11 @@
                     },
                     "required": ["text"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -245,6 +270,11 @@
                 "content": {
                     "title": "Custom Display Contents",
                     "description": "Holds properties for this custom Display. Data stored here is not standardized."
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -296,6 +326,11 @@
                     },
                     "required": ["controlParameters"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -344,6 +379,11 @@
                     },
                     "required": ["controlParameters"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -392,6 +432,11 @@
                     },
                     "required": ["controlParameters"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -441,6 +486,11 @@
                     },
                     "required": ["controlParameters"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
@@ -513,6 +563,11 @@
                     },
                     "required": ["data", "minY", "maxY"],
                     "additionalProperties": false
+                },
+                "addons": {
+                    "title": "Addon Data",
+                    "description": "Object containing data for various addons.",
+                    "$ref": "./DI-Addons.json"
                 }
             },
             "required": ["meta", "displayType", "content"],
