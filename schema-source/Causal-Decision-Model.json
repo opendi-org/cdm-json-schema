@@ -36,7 +36,8 @@
             "type": "array",
             "items": {
                 "oneOf": [
-                    {"$ref": "./DI-Evaluatable-Assets.json#/$defs/script"}
+                    {"$ref": "./DI-Evaluatable-Assets.json#/$defs/script"},
+                    {"$ref": "./DI-Evaluatable-Assets.json#/$defs/apicall"}
                 ]
             }
         },

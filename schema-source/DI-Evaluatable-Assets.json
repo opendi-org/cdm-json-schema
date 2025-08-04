@@ -33,6 +33,38 @@
             },
             "required": ["meta", "evalType", "content"],
             "additionalProperties": false
+        },
+        "apicall": {
+            "title": "API Call",
+            "description": "Holds info for an API call, called during simulation",
+            "type": "object",
+            "properties": {
+                "meta": {
+                    "title": "Asset Metadata",
+                    "description": "Metadata shared by all DI Assets",
+                    "$ref": "./DI-Asset.json"
+                },
+                "evalType": {
+                    "title": "Evaluatable Type",
+                    "description": "The type of evaluatable object. Determines what other properties the schema expects.",
+                    "const": "APICall"
+                },
+                "content": {
+                    "title": "API Call Contents",
+                    "description": "Holds properties specific to API calls.",
+                    "type": "object",
+                    "properties": {
+                        "endpointURI": {"type": "string"},
+                        "restMethod": {"type": "string", "default": "GET"},
+                        "defaultPayload": {"type": "object", "default": {}},
+                        "defaultURIExtension": {"type": "string", "default": ""}
+                    },
+                    "required": ["endpointURI", "restMethod", "defaultPayload", "defaultURIExtension"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["meta", "evalType", "content"],
+            "additionalProperties": false
         }
     }
 }
