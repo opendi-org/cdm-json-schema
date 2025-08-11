@@ -31,6 +31,12 @@
             "description": "Name of the function used in the referenced Evaluatable Asset. Inputs are passed into this function, and outputs are populated by it.",
             "type": "string"
         },
+        "apiCacheSize": {
+            "title": "API Cache Size",
+            "description": "Maximum number of entries allowed for this evaluatable element in the cache of API results. Set to 0 if you want this evaluatable element to always re-send API requests.",
+            "type": "number",
+            "default": 2
+        },
         "evaluatableAsset": {
             "title": "Evaluatable Asset",
             "description": "UUID for the Evaluatable Asset used by this Evaluatable Element.",
