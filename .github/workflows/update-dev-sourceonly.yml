@@ -1,0 +1,46 @@
+#Updates the dev-sourceonly branch by copying over the JSON Schema source files
+#leaving files like LICENSE behind
+name: Transfer source files from dev to dev-sourceonly
+
+on:
+    push:
+        branches:
+            - dev
+
+    workflow_dispatch: #Allow manual trigger from Actions tab
+
+jobs:
+    move-changes:
+
+        name: Gather changes and push
+        permissions:
+            contents: write #Need permission to push to dev-sourceonly
+        runs-on: ubuntu-latest
+        
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            
+            # Setup user info and origin url so push will succeed
+            - name: Configure git
+              run: |
+                git config --global user.name 'Actions: Generate dev-sourceonly'
+                git config --global user.email 'actions-generate-dev-sourceonly@users.noreply.github.com'
+                git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+            
+            # Pull source files out to a directory outside of the repo
+            # then switch to sourceonly branch and replace all contents with new source files
+            - name: Replace source files
+              run: |
+                mkdir ../TEMP
+                mv ./schema-source ../TEMP/schema-source
+                git switch dev-sourceonly
+                find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+                mv ../TEMP/schema-source/* .
+            
+            - name: Push new source files
+              run: |
+                git add *
+                git commit -m "Action: Update source files from dev"
+                git push

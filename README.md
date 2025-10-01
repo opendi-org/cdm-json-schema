@@ -6,6 +6,9 @@ Source files defining the OpenDI Causal Decision Model data structure, as a JSON
 
 If you plan to include the OpenDI JSON Schema in the source files for your own project, include this repository as a [Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
+Follow the above instructions to add the submodule to some subdirectory within your project.  
+**NOTE:** For stricter environments, files like `LICENSE` and `README.md` may cause issues. In these cases, after adding the submodule, edit the entry for this submodule in `.gitmodules` to add `branch = main-sourceonly` or `branch = dev-sourceonly`. These branches exclude `LICENSE`, `README.md`, and `test-data.json`. 
+
 Including these schemas as a submodule allows you to reference them directly in the `$schema` property at the top of a `.json` data file.
 
 **The main schema to reference is `Causal-Decision-Model.json`.**  
@@ -17,3 +20,24 @@ See [test-data.json](./test-data.json) for an example of this.
 
 - [OpenDI Api Specification](https://github.com/opendi-org/api-specification)
 - [CDD Authoring Tool](https://github.com/opendi-org/cdd-authoring-tool)
+
+## Getting up to speed
+
+A good way to get familiar with the schema is to browse some test data. See `test-data.json`.  
+Ideally, clone the repo to a dev environment that has JSON Schema integration, like VS Code. See instructions below.
+
+Alternatively, browse the docs on the OpenDI website.  
+These docs pull information directly from the schema and presents it in a more readable format. 
+
+### VS Code
+
+1. Clone the repository to a local folder.
+2. Open the repository folder VS Code.
+3. In VS Code, open `test-data.json`.
+4. Hover over portions of the test data to see popups for the title and description information included in the schema.
+5. Try adding to the test data. Use the [Problems Panel](https://code.visualstudio.com/docs/editor/editingevolved#_errors-warnings) to see what changes would bring your data into schema compliance (missing/malformed fields, etc).
+
+## Resources Used
+
+The OpenDI JSON Schema definition is based on the Schema specifications managed by [JSON-Schema.org](https://json-schema.org/).  
+The OpenDI API specification is defined using [the OpenAPI specification](https://www.openapis.org/what-is-openapi).
