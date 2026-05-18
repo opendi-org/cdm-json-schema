@@ -282,7 +282,7 @@
         },
         {
             "title": "Control: Range",
-            "description": "Holds data and configuration for a controllable numeric range. Ranges have a min, max, and step size, and can be represented by gauges, sliders, etc.",
+            "description": "Holds data and configuration for a controllable numeric range. Ranges have a numeric min, max, and step size, and can be represented by gauges, sliders, etc.",
             "type": "object",
             "properties": {
                 "meta": {
@@ -338,7 +338,7 @@
         },
         {
             "title": "Control: Text",
-            "description": "Holds data and configuration for a controllable text input.",
+            "description": "Holds data and configuration for a controllable text input. Text inputs have a string value, and can be represented by text boxes, labels, etc.",
             "type": "object",
             "properties": {
                 "meta": {
@@ -391,7 +391,7 @@
         },
         {
             "title": "Control: Boolean",
-            "description": "Holds data and configuration for a controllable boolean input (generally a checkbox).",
+            "description": "Holds data and configuration for a controllable boolean input. Boolean inputs have a true/false value, and can be represented by checkboxes, toggle switches, etc.",
             "type": "object",
             "properties": {
                 "meta": {
@@ -444,7 +444,7 @@
         },
         {
             "title": "Control: Selector",
-            "description": "Holds properties specific to a Controllable Selector Display",
+            "description": "Holds properties specific to a Controllable Selector Display. Selector inputs represent a list of options, with one selected value. Neither the options list nor the selected value enforce a specific type. Selected value is expected to be a raw value, not an index. Selector inputs can be represented by dropdown menus, lists of radio buttons, etc.",
             "type": "object",
             "properties": {
                 "meta": {
@@ -498,7 +498,7 @@
         },
         {
             "title": "Stacked Bar Chart",
-            "description": "Holds data and configuration for a dynamic bar chart",
+            "description": "Holds data and configuration for a dynamic bar chart. Supports stacked series, see nested descriptions for details.",
             "type": "object",
             "properties": {
                 "meta": {
